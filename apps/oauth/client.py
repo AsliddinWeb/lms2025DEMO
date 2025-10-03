@@ -14,13 +14,11 @@ class oAuth2Client:
     def get_authorization_url(self):
         payload = {
             'client_id': self.client_id,
-            'client_secret': self.client_secret,
             'redirect_uri': self.redirect_uri,
             'response_type': 'code',
         }
-
+        # ⚠️ authorize bosqichida client_secret yuborilmaydi
         url = self.authorize_url + "?" + urlencode(payload)
-
         return url
 
     def get_access_token(self, auth_code):
@@ -31,10 +29,26 @@ class oAuth2Client:
             'redirect_uri': self.redirect_uri,
             'grant_type': 'authorization_code'
         }
-        response = requests.post(self.token_url, data=payload)
-        
-        return response.json()
+
+        headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+        response = requests.post(self.token_url, data=payload, headers=headers)
+
+        print("DEBUG TOKEN STATUS:", response.status_code)
+        print("DEBUG TOKEN HEADERS:", response.headers)
+        print("DEBUG TOKEN BODY:", response.text)
+
+        try:
+            return response.json()
+        except Exception as e:
+            return {
+                "error": "invalid_json",
+                "details": str(e),
+                "raw_response": response.text
+            }
 
     def get_user_details(self, access_token):
-        response = requests.get(self.resource_owner_url, headers={'Authorization': f'Bearer {access_token}'})
+        response = requests.get(
+            self.resource_owner_url,
+            headers={'Authorization': f'Bearer {access_token}'}
+        )
         return response.json()
