@@ -31,10 +31,61 @@ class oAuth2Client:
             'redirect_uri': self.redirect_uri,
             'grant_type': 'authorization_code'
         }
-        response = requests.post(self.token_url, data=payload)
 
-        return response.json()
+        print(f"POST Request to: {self.token_url}")
+        print(f"Payload: {payload}")
+
+        try:
+            response = requests.post(self.token_url, data=payload, timeout=30)
+            print(f"Response Status Code: {response.status_code}")
+            print(f"Response Headers: {response.headers}")
+            print(f"Response Text: {response.text[:500]}")  # Birinchi 500 belgini ko'rsatish
+
+            if response.status_code != 200:
+                return {
+                    'error': f'HTTP {response.status_code}',
+                    'message': response.text
+                }
+
+            return response.json()
+
+        except requests.exceptions.JSONDecodeError as e:
+            print(f"JSON Decode Error: {e}")
+            print(f"Raw response: {response.text}")
+            return {
+                'error': 'Invalid JSON response',
+                'raw_response': response.text,
+                'status_code': response.status_code
+            }
+        except requests.exceptions.Timeout:
+            return {'error': 'Request timeout'}
+        except requests.exceptions.RequestException as e:
+            print(f"Request Exception: {e}")
+            return {'error': str(e)}
 
     def get_user_details(self, access_token):
-        response = requests.get(self.resource_owner_url, headers={'Authorization': f'Bearer {access_token}'})
-        return response.json()
+        print(f"GET Request to: {self.resource_owner_url}")
+        print(f"Access Token: {access_token[:20]}...")
+
+        try:
+            response = requests.get(
+                self.resource_owner_url,
+                headers={'Authorization': f'Bearer {access_token}'},
+                timeout=30
+            )
+
+            print(f"User Details Response Status: {response.status_code}")
+            print(f"User Details Response: {response.text[:500]}")
+
+            if response.status_code != 200:
+                return None
+
+            return response.json()
+
+        except requests.exceptions.JSONDecodeError as e:
+            print(f"JSON Decode Error in user details: {e}")
+            print(f"Raw response: {response.text}")
+            return None
+        except requests.exceptions.RequestException as e:
+            print(f"Request Exception in user details: {e}")
+            return None
