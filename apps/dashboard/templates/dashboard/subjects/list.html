@@ -1,0 +1,89 @@
+
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block styles %}
+        <link rel="stylesheet" href="{% static 'assets/libs/swiper/swiper-bundle.min.css'%}">
+
+{% endblock %}
+
+{% block content %}
+	
+                    <!-- Start::page-header -->
+                    <div class="page-header-breadcrumb mb-3">
+                        <div class="d-flex align-center justify-content-between flex-wrap">
+                            <h1 class="page-title fw-medium fs-18 mb-0">Fanlar</h1>
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">XIU Onlayn</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Bosh Sahifa</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- End::page-header -->
+
+                    <!-- Start:: row-1 -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                                        <h5 class="fw-semibold mb-0 d-flex align-items-center">Mening Fanlarim<span class="badge bg-success ms-2 rounded-pill">{{ subjects|length }}</span></h5>
+
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 mb-4 flex-wrap pos-category pos-categories-list" id="filter">
+                                        <div class="nft-tag nft-tag-primary active">
+                                            <a href="javascript:void(0);" class="stretched-link categories" data-filter="*">
+                                                
+                                                <span class="nft-tag-text podcast-category-text" style="padding: 0px 0.5rem 0px 0.5rem;">{{ semester }}</span>
+                                            </a>    
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="row list-wrapper">
+                                        {% for subject in subjects %}
+                                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 card-item semester_{{ subject.semester }}" data-category="semester_{{ subject.semester }}">
+                                            <div class="card custom-card">
+                                                <div class="card-body">
+                                                    <div class="mb-1">
+                                                        <a href="javascript:void(0);" class="fw-medium fs-16">{{ subject.subject_type }}</a>
+                                                    </div>
+                                                    <div class="d-flex align-items-end justify-content-between flex-wrap gap-2">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="{% url 'dashboard:subject_detail' subject_id=subject.id %}">
+                                                                <h5 class="fw-semibold mb-0">{{ subject.name }}</h5>
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="{% url 'dashboard:subject_detail' subject_id=subject.id %}" class="btn btn-primary btn-sm btn-wave d-inline-flex align-items-center justify-content-center" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Batafsil">Batafsil <i class="ti ti-eye ms-1"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End:: row-1 -->
+
+
+{% endblock %}
+
+{% block scripts %}
+
+        <!-- Isotope-layout JS -->
+        <script src="{% static 'assets/libs/isotope-layout/isotope.pkgd.min.js'%}"></script>
+
+        <!-- Swiper JS -->
+        <script src="{% static 'assets/libs/swiper/swiper-bundle.min.js'%}"></script>
+
+        <!-- Internal POS-Dashboard JS -->
+        <script src="{% static 'assets/js/pos-dashboard.js'%}"></script>
+
+{% endblock %}

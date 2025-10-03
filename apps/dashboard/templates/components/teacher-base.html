@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat" data-toggled="close" data-vertical-style="default" data-toggled="double-menu-open">
+
+    <head>
+
+        <!-- Meta Data -->
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="Asliddin Abdujabborov">
+        <meta name="keywords" content="">
+        
+        <!-- Title -->
+        <title>Dashboard</title>
+        
+        <!-- Favicon -->
+        <link rel="icon" href="{% static 'assets/images/brand-logos/favicon.ico'%}" type="image/x-icon">
+    
+        <!-- Start::styles -->
+        {% include 'components/layouts/styles.html' %}
+        {% block styles %}{% endblock %}
+        <!-- End::styles -->  
+
+    </head>
+
+    <body class="">
+
+        <div class="progress-top-bar"></div>
+
+        <!-- Start::main-switcher -->
+        {% include 'components/layouts/switcher.html' %}
+        <!-- End::main-switcher -->
+
+        <!-- Loader -->
+        <div id="loader" >
+            <img src="{% static 'assets/images/media/loader.svg'%}" alt="">
+        </div>
+        <!-- Loader -->
+
+        <div class="page">
+
+            <!-- Start::main-header -->
+            {% include 'components/layouts/teacher-header.html' %}
+            <!-- End::main-header -->
+
+            <!-- Start::main-sidebar -->
+            {% include 'components/layouts/teacher-sidebar.html' %}
+            <!-- End::main-sidebar -->
+            
+            <!-- Start::Main-content -->
+            <div class="main-content app-content">
+                <div class="container-fluid page-container main-body-container">
+
+                    {% block content %}{% endblock %}
+
+                </div>
+            </div>
+            <!-- End Main Content-->
+            
+            <!-- Start::main-modal -->
+            {% include 'components/layouts/modal.html' %}
+            <!-- End::main-modal --> 
+            
+            <!-- Start::main-footer -->
+            {% include 'components/layouts/footer.html' %}
+            <!-- End::main-footer -->  
+            
+        </div>
+        <!-- END PAGE-->
+
+        <!-- Start::scripts -->
+        {% include 'components/layouts/scripts.html' %}
+        
+        <!-- Sticky JS -->
+        <script src="{% static 'assets/js/sticky.js'%}"></script>
+        
+        <!-- Defaultmenu JS -->
+        <script src="{% static 'assets/js/defaultmenu.min.js'%}"></script>
+
+        {% block scripts %}{% endblock %}
+
+        <!-- Custom-Switcher JS -->
+        <script src="{% static 'assets/js/custom-switcher.min.js'%}"></script>
+
+        <!-- Custom JS -->
+        <script src="{% static 'assets/js/custom.js'%}"></script>
+        
+    </body>
+    
+</html>

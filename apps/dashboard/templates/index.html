@@ -1,0 +1,413 @@
+
+{% extends 'components/landing-base.html' %}
+{% load static %}
+
+{% block styles %}
+
+
+{% endblock %}
+
+{% block content %}
+	
+<!-- Start:: Landing Banner -->
+<div class="landing-banner" id="home">
+    <div class="banner-image-container">
+        <img src="{% static 'assets/images/media/backgrounds/5.png'%}" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 my-auto">
+                <div class="d-inline-flex align-items-center gap-2 text-default badge bg-white border fs-13 rounded-pill">
+                    <span class="avatar avatar-xs avatar-rounded bg-warning">
+                        <i class="ri-flashlight-fill fs-14"></i>
+                    </span>
+                    Masofaviy ta'limda yangi imkoniyatlar
+                </div>
+                <h1 class="fw-semibold mt-3 landing-banner-heading">
+                    Bilimingizni <br> onlayn <span class="text-primary">oshiring</span>
+                </h1>
+                <span class="d-block fs-18">
+                    Xalqaro innovatsion universitetining masofaviy ta'lim tizimi orqali darslaringizni kuzating, topshiriqlarni bajaring va natijalarni onlayn ko‘rib boring.
+                </span>
+                <div class="btn-list banner-buttons">
+                    <a href="#" class="btn btn-primary btn-lg rounded-pill btn-w-lg">O‘qishni boshlash</a>
+                    <a class="btn btn-lg btn-light border rounded-pill btn-w-lg" href="javascript:void(0);">Platforma haqida</a>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="banner-main-img text-end d-xl-block d-none">
+                    <img src="{% static 'assets/images/media/backgrounds/7.png'%}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: Landing Banner -->
+
+
+<!-- Start:: Section-1 -->
+<section class="section">
+    <div class="container">
+        <div class="heading-section">
+            <div class="heading-subtitle">Hamkorlar</div>
+            <div class="heading-title">Ishonch bildirgan tashkilot va muassasalar</div>
+            <div class="heading-description">
+                O‘zbekiston va xorijdagi ko‘plab ta’lim muassasalari hamda tashkilotlar 
+                <br> bizning masofaviy ta’lim tizimimizdan foydalanmoqda.
+            </div>
+        </div>
+        <div class="swiper trusted-clients">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/13.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/14.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/15.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/16.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/17.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/18.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/19.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/20.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card custom-card trusted-clients-container mb-0 border border-dashed">
+                        <div class="card-body">
+                            <img src="{% static 'assets/images/company-logos/12.png'%}" alt="Hamkor logo" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Section-1 -->
+
+
+<!-- Start:: Section-2 -->
+<section class="section" id="feature">
+    <div class="container">
+        <div class="heading-section">
+            <div class="heading-subtitle">Xususiyatlar</div>
+            <div class="heading-title">Sizning ta’lim jarayoningizni qulaylashtiruvchi kuchli imkoniyatlar</div>
+            <div class="heading-description">
+                Samaradorlikni oshiring va boshqaruvni soddalashtiring – real vaqt rejimidagi qulay funksiyalar bilan.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-primary-transparent svg-primary">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Shaxsiy boshqaruv paneli</h5>
+                        <span class="fs-15 text-muted">
+                            O‘zingizga qulay tartibda boshqaruv panelini sozlang va kerakli modullarni joylashtiring.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-secondary-transparent svg-secondary">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Interaktiv grafikalar</h5>
+                        <span class="fs-15 text-muted">
+                            Dars jarayonlari va natijalarni interaktiv grafikalar orqali kuzatish imkoniyati.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-success-transparent svg-success">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Foydalanuvchi interfeysi elementlari</h5>
+                        <span class="fs-15 text-muted">
+                            Oson va tushunarli interfeys yordamida ta’lim jarayonini tez va samarali boshqarish.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-warning-transparent svg-warning">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Moslashuvchan dizayn</h5>
+                        <span class="fs-15 text-muted">
+                            Platforma barcha qurilmalarda – telefon, planshet va kompyuterlarda qulay ishlaydi.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-info-transparent svg-info">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Jadval boshqaruvi</h5>
+                        <span class="fs-15 text-muted">
+                            Fanlar, darslar va mashg‘ulotlar jadvalini qulay boshqarish va ko‘rish imkoniyati.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-danger-transparent svg-danger">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Onlayn test va topshiriqlar</h5>
+                        <span class="fs-15 text-muted">
+                            Talabalar uchun topshiriqlar va testlarni yaratish, avtomatik tekshirish va natijalarni kuzatish.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-teal-transparent svg-teal">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Qorong‘i / Yorug‘ rejim</h5>
+                        <span class="fs-15 text-muted">
+                            Talabalar uchun ko‘zga qulay qorong‘i yoki yorug‘ rejimni tanlash imkoniyati.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-orange-transparent svg-orange">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Bildirishnomalar</h5>
+                        <span class="fs-15 text-muted">
+                            Muhim yangiliklar, dars va topshiriqlar haqida real vaqt rejimida bildirishnomalar olish.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <div class="lh-1 mb-3">
+                            <span class="avatar avatar-lg avatar-rounded bg-purple-transparent svg-purple">   
+                                <!-- SVG o‘zgarmaydi -->
+                            </span>
+                        </div>
+                        <h5 class="fw-semibold">Tayyor sahifa shablonlari</h5>
+                        <span class="fs-15 text-muted">
+                            Turli fan va darslar uchun tayyor shablonlardan foydalanib, vaqtni tejang.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Section-2 -->
+
+
+<!-- Start:: Section-3 -->
+<section class="section" id="service">
+    <div class="container">
+        <div class="heading-section">
+            <div class="heading-subtitle">Xizmatlar</div>
+            <div class="heading-title">Ta'lim jarayonini yengillashtiruvchi yechimlar</div>
+            <div class="heading-description">
+                Bizning xizmatlarimiz orqali o‘quv jarayonini samarali tashkil eting, <br> talabalar faoliyatini kuzating va o‘qituvchilar ishini optimallashtiring.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-7">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card custom-card landing-services-card primary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="lh-1">
+                                        <span class="avatar avatar-lg avatar-rounded bg-primary-transparent svg-primary">
+                                            <!-- ikon o‘zgarishsiz qoladi -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M104,208V104H32v96a8,8,0,0,0,8,8H96" opacity="0.2"/><line x1="32" y1="104" x2="224" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="104" y1="104" x2="104" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h6 class="d-block fw-semibold">Moslashuvchan Panel</h6>
+                                        <span class="d-block text-muted">Har bir foydalanuvchi o‘ziga mos boshqaruv panelini yaratishi mumkin.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card custom-card landing-services-card secondary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="lh-1">
+                                        <span class="avatar avatar-lg avatar-rounded bg-secondary-transparent svg-secondary">
+                                            <!-- ikon o‘zgarishsiz -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M32,48H208a16,16,0,0,1,16,16V208a0,0,0,0,1,0,0H32a0,0,0,0,1,0,0V48A0,0,0,0,1,32,48Z" opacity="0.2"/><polyline points="224 208 32 208 32 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="224 96 160 152 96 104 32 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h6 class="d-block fw-semibold">Onlayn Reyting va Statistikalar</h6>
+                                        <span class="d-block text-muted">Talabalar faoliyati bo‘yicha real vaqt statistikasi va tahlillar.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card custom-card landing-services-card warning">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="lh-1">
+                                        <span class="avatar avatar-lg avatar-rounded bg-warning-transparent svg-warning">
+                                            <!-- ikon -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="96" r="64" opacity="0.2"/><circle cx="128" cy="96" r="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M32,216c19.37-33.47,54.55-56,96-56s76.63,22.53,96,56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h6 class="d-block fw-semibold">O‘qituvchi va Talaba Boshqaruvi</h6>
+                                        <span class="d-block text-muted">Rollar, huquqlar va kirish nazoratini boshqarish imkoniyati.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card custom-card landing-services-card success">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="lh-1">
+                                        <span class="avatar avatar-lg avatar-rounded bg-success-transparent svg-success">
+                                            <!-- ikon -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M212,132l-58.63,58.63a32,32,0,0,1-45.25,0L65.37,147.88a32,32,0,0,1,0-45.25L124,44Z" opacity="0.2"/><line x1="144" y1="64" x2="184" y2="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="232" y1="72" x2="192" y2="112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="224" y1="144" x2="112" y2="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M212,132l-58.63,58.63a32,32,0,0,1-45.25,0L65.37,147.88a32,32,0,0,1,0-45.25L124,44" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="86.75" y1="169.25" x2="32" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h6 class="d-block fw-semibold">Integratsiya</h6>
+                                        <span class="d-block text-muted">Elektron kutubxona, test tizimi va boshqa xizmatlar bilan integratsiya.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 my-auto">
+                <div class="services-image-container text-end d-xl-block d-none">
+                    <img src="{% static 'assets/images/media/media-67.png'%}" alt="ta'lim xizmatlari" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Section-3 -->
+
+
+<!-- Start:: Call To Action Section -->
+<section class="section section-md section-primary text-fixed-white py-5 buy-now-section">
+    <div class="testimonials-background-container">
+        <img src="{% static 'assets/images/media/backgrounds/1.png'%}" alt="background">
+    </div>
+    <div class="container">
+        <div class="d-flex align-items-center gap-2 justify-content-between flex-wrap">
+            <div>
+                <h4 class="fw-semibold text-fixed-white">O‘qish jarayonini bugun boshlang!</h4>
+                <span class="d-block fs-16 op-8">Platformamiz imkoniyatlarini sinab ko‘ring. <br> Talaba sifatida ro‘yxatdan o‘ting yoki demo darslarni ko‘rib chiqing!</span>
+            </div>
+            <div class="btn-list">
+                <a href="#" class="btn btn-danger btn-lg btn-w-md d-inline-flex align-items-center">
+                    Demo Darslarni Ko‘rish<i class="ti ti-arrow-narrow-right ms-2"></i>
+                </a>
+                <a href="#" class="btn btn-success btn-lg btn-w-md d-inline-flex align-items-center">
+                    Hozir Ro‘yxatdan O‘tish<i class="ti ti-user-plus ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End:: Call To Action Section -->
+
+
+
+{% endblock %}
+
+{% block scripts %}
+	
+
+
+{% endblock %}

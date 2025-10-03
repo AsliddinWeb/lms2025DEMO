@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ room.title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+        }
+        
+        .header {
+            background: #16213e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .room-info h2 {
+            color: #00d9ff;
+            margin-bottom: 0.3rem;
+        }
+        
+        .room-info p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .owner-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .host-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-danger {
+            background: #ff4757;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #ee5a6f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #2d3436;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #636e72;
+        }
+        
+        #root {
+            width: 100vw;
+            height: calc(100vh - 80px);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="room-info">
+            <h2>{{ room.title }}</h2>
+            <p>{{ room.description }}</p>
+        </div>
+        <div class="controls">
+            {% if is_owner %}
+                <span class="owner-badge">👑 Owner</span>
+                <a href="{% url 'close_room' room.room_id %}" class="btn btn-danger" 
+                   onclick="return confirm('Roomni yopmoqchimisiz?')">
+                    Roomni Yopish
+                </a>
+            {% endif %}
+            {% if is_host %}
+                <span class="host-badge">🎯 Host</span>
+            {% endif %}
+            <a href="{% url 'dashboard:home' %}" class="btn btn-secondary">Chiqish</a>
+        </div>
+    </div>
+    
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+    <script>
+        window.onload = function () {
+            const roomID = "{{ room.room_id }}";
+            const userID = "{{ user_id }}";
+            const userName = "{{ username }}";
+            const appID = {{ app_id }};
+            const serverSecret = "{{ server_secret }}";
+            const isOwner = {{ is_owner|lower }};
+            const isHost = {{ is_host|lower }};
+            
+            const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
+                appID, 
+                serverSecret, 
+                roomID, 
+                userID, 
+                userName
+            );
+            
+            const zp = ZegoUIKitPrebuilt.create(kitToken);
+            
+            const config = {
+                container: document.querySelector("#root"),
+                sharedLinks: [{
+                    name: 'Room havolasi',
+                    url: window.location.href,
+                }],
+                scenario: {
+                    mode: ZegoUIKitPrebuilt.VideoConference,
+                },
+                turnOnMicrophoneWhenJoining: true,
+                turnOnCameraWhenJoining: true,
+                showMyCameraToggleButton: true,
+                showMyMicrophoneToggleButton: true,
+                showAudioVideoSettingsButton: true,
+                showScreenSharingButton: isHost || isOwner,
+                showTextChat: true,
+                showUserList: true,
+                maxUsers: {{ room.max_participants }},
+                layout: "Auto",
+                showLayoutButton: true,
+            };
+            
+            if (isOwner) {
+                config.showLeavingView = false;
+            }
+            
+            zp.joinRoom(config);
+        };
+    </script>
+</body>
+</html>

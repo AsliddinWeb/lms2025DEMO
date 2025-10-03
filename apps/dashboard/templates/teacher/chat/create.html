@@ -1,0 +1,84 @@
+{% extends 'components/teacher-base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Start::page-header -->
+  <div class="page-header-breadcrumb mb-3">
+    <div class="d-flex align-center justify-content-between flex-wrap">
+      <h1 class="page-title fw-medium fs-18 mb-0">Jonli dars yaratish</h1>
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a href="javascript:void(0);">XIU Onlayn</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="javascript:void(0);">Jonli darslar</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Yaratish</li>
+      </ol>
+    </div>
+  </div>
+  <!-- End::page-header -->
+
+  <!-- Start::row-3 -->
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card custom-card">
+        <form method="post">
+          {% csrf_token %}
+          <div class="card-body p-3">
+            <div class="row">
+
+              <!-- Chap ustun -->
+              <div class="col-md-6">
+                <!-- Fan nomi -->
+                <div class="mb-3">
+                  <label class="form-label fs-14 text-dark">Fan nomi</label>
+                  <input type="text" name="subject_title" class="form-control" placeholder="Fan nomi" required>
+                </div>
+
+                <!-- Dars nomi -->
+                <div class="mb-3">
+                  <label class="form-label fs-14 text-dark">Dars nomi</label>
+                  <input type="text" name="title" class="form-control" placeholder="Dars nomi" required>
+                </div>
+
+                <!-- Tavsif -->
+                <div class="mb-3">
+                  <label class="form-label fs-14 text-dark">Tavsif</label>
+                  <textarea name="description" rows="6" class="form-control" placeholder="Dars haqida qisqacha ma'lumot"></textarea>
+                </div>
+              </div>
+
+              <!-- O'ng ustun -->
+              <div class="col-md-6">
+                <!-- Boshlanish vaqti -->
+                <div class="mb-3">
+                  <label class="form-label fs-14 text-dark">Boshlanish vaqti</label>
+                  <input type="datetime-local" name="start_time" class="form-control">
+                </div>
+
+                <!-- Maksimal qatnashchilar soni -->
+                <div class="mb-3">
+                  <label class="form-label fs-14 text-dark">Maksimal qatnashchilar soni</label>
+                  <input type="number" name="max_participants" class="form-control" value="50" min="1">
+                </div>
+
+                <!-- Faollik belgisi -->
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" name="is_active" id="is_active" checked>
+                  <label class="form-check-label" for="is_active">Faol</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tugma -->
+            <div class="text-end mt-3">
+              <button class="btn btn-primary" type="submit">Yaratish</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- End::row-3 -->
+{% endblock %}
